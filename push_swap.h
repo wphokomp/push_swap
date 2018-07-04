@@ -6,7 +6,7 @@
 /*   By: wphokomp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2017/07/23 15:23:15 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/04 15:52:14 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-# include "./lib/libft.h"
+# include "./libft/libft.h"
 
 void	ft_sa(char **stack_a);
 void	ft_sb(char **stack_b);
