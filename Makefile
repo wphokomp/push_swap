@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wphokomp <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: william <william@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/04 15:38:36 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/04 15:51:46 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/06 21:29:17 by william          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
-SRC = checker.c ft_cmds.c
+SRC = checker.c swap.c push.c
 
 OBJ = $(patsubst %.c,%.o, $(SRC))
 

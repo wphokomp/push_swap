@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_cmds.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/06 21:28:54 by william          ###   ########.fr       */
+/*   Created: 2017/07/22 13:01:17 by wphokomp          #+#    #+#             */
+/*   Updated: 2018/07/06 21:28:40 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "./push_swap.h"
 
-# include "./libft/libft.h"
+void	swap_a(struct Stack *stack_a)
+{
+	int		first;
+	int		second;
 
-void	swap_a(struct Stack *stack_a);
-
-#endif
+	if (!isEmpty(stack_a) && stack_a->capacity > 1)
+	{
+		first = pop(stack_a);
+		second = pop(stack_a);
+		push(stack_a, first);
+		push(stack_a, second);
+	}
+}

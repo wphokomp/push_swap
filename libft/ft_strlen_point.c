@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_strlen_point(char **list)
+size_t		ft_strlen_point(char **list)
 {
-	int i;
+	size_t i;
 
 	if (list == NULL)
 		return (0);

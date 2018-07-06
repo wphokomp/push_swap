@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wphokomp <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: william <william@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/01 15:15:18 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/03 14:07:45 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/06 21:31:03 by william          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC = ft_atoi.c ft_bzero.c ft_bzero_point.c ft_isalnum.c ft_isalpha.c\
 	  ft_strsub.c ft_strdup.c ft_strtrim.c ft_tolower.c ft_toupper.c\
 	  ft_restart_file.c ft_listnew.c ft_strchr_indx.c\
 	  ft_listdup.c op.c ft_chrcmp.c ft_isbrac.c ft_sortarr.c\
-	  ft_putnbrendl.c
+	  ft_putnbrendl.c ft_atol.c stackFunctions.c
 
 CFLAGS = -Wall\
 		 -Werror\
@@ -38,7 +38,7 @@ OBJ = *.o
 
 INC = libft.h
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME):
 	@echo "\033[32mCOMPILING...\033[00M"
@@ -50,12 +50,10 @@ $(NAME):
 	@echo "\x1b[33mCompiled...\x1b[0m"
 
 clean:
-	@rm -f *.o
-	@echo "\x1b[31mObject files cleaned.\x1b[0m"
+	@rm -f *.o libft.h.gch
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f *.o
-	@echo "\x1b[31mLibrary cleaned.\x1b[0m"
 
-re: fclean all
+re: fclean all clean
