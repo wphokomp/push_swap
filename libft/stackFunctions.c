@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 20:56:07 by william           #+#    #+#             */
-/*   Updated: 2018/07/06 21:07:53 by william          ###   ########.fr       */
+/*   Updated: 2018/07/06 23:48:26 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,4 @@ int		lastItem(struct Stack *stack)
 	if (isEmpty(stack))
 		return (-2147483648);
 	return (stack->array[stack->top]);
-}
-
-void	push(struct Stack *stack, char item)
-{
-	if (isFull(stack)) return ;
-	stack->array[++stack->top] = item;
-}
-
-int 	pop(struct Stack *stack)
-{
-	if (isEmpty(stack))
-		return (-2147483648);
-	return (stack->array[stack->top--]);
 }

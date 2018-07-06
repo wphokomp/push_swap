@@ -6,7 +6,7 @@
 #    By: william <william@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/01 15:15:18 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/06 21:31:03 by william          ###   ########.fr        #
+#    Updated: 2018/07/06 23:48:05 by william          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ SRC = ft_atoi.c ft_bzero.c ft_bzero_point.c ft_isalnum.c ft_isalpha.c\
 	  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c\
 	  ft_strnew_point.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c\
 	  ft_strsub.c ft_strdup.c ft_strtrim.c ft_tolower.c ft_toupper.c\
-	  ft_restart_file.c ft_listnew.c ft_strchr_indx.c\
+	  ft_restart_file.c ft_listnew.c ft_stdinput.c ft_strchr_indx.c\
 	  ft_listdup.c op.c ft_chrcmp.c ft_isbrac.c ft_sortarr.c\
-	  ft_putnbrendl.c ft_atol.c stackFunctions.c
+	  ft_putnbrendl.c ft_atol.c stackFunctions.c ft_push_pop.c
 
 CFLAGS = -Wall\
 		 -Werror\

@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 14:43:24 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/06 21:27:02 by william          ###   ########.fr       */
+/*   Updated: 2018/07/06 23:52:03 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ struct		Stack
 
 struct	Stack	*ft_createStack(unsigned int cap);
 
-void			push(struct Stack *stack, char item);
+void			push(struct Stack *stack, int item);
+void			pushall(struct Stack *stack, int *items, int len);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putnbr(int n);
@@ -114,6 +115,7 @@ char			*ft_itoa(int n);
 char			*ft_strnew(size_t size);
 char			**ft_strnew_point(size_t size);
 char			*ft_strdup(const char *s1);
+char			*ft_stdinput(void);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_str_chr(char *s, int c);
 char			*ft_mem_realloc(char *old, size_t size);
