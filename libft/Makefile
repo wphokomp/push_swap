@@ -6,7 +6,7 @@
 #    By: william <william@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/01 15:15:18 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/07 10:49:08 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/07 12:05:12 by wphokomp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC = ft_atoi.c ft_bzero.c ft_bzero_point.c ft_isalnum.c ft_isalpha.c\
 CFLAGS = -Wall\
 		 -Werror\
 		 -Wextra\
-		 -std=c99
+		 -std=c99\
+		 -Wno-unused-parameter
 
 OBJ = *.o
 

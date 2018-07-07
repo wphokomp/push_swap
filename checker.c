@@ -6,7 +6,7 @@
 /*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 11:07:06 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/07 12:12:07 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int		check_duplicates(char **list)
 void	ft_sorted(struct s_stack* stack_a, struct s_stack* stack_b)
 {
 	int		i;
-	// int		order;
+	//int		order;
 	int		*stack_a_cpy;
 
 	if (!ft_isempty(stack_b))
@@ -108,11 +108,14 @@ void	ft_sorted(struct s_stack* stack_a, struct s_stack* stack_b)
 	{
 		i = -1;
 		stack_a_cpy = (int *)malloc(sizeof(int) * stack_a->capacity);
-		/*
-		 * int i, j;
-		 * for (i = 0; i < capacity - 1; i++)
-		 * 	for (j = 0; j < capacity - i - 1; j++)
-		 * 		swap(a, b);*/
+		while (!ft_isempty(stack_a))
+			stack_a_cpy[++i] = ft_pop(stack_a);
+		ft_pushall(stack_a, stack_a_cpy, stack_a->capacity);
+		ft_sortint_arr(stack_a_cpy, stack_a->capacity);
+		ft_putnbrendl(ft_intcmp(stack_a_cpy, stack_a->array, (int)stack_a->capacity));
+		//order = -1;
+		//while (++order < (int)stack_a->capacity)
+		//	ft_putnbrendl(stack_a->array[order]);
 	}
 }
 
