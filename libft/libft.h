@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 14:43:24 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/06 23:52:03 by william          ###   ########.fr       */
+/*   Updated: 2018/07/07 11:05:00 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,25 @@
 # define MAX_FD 2560
 
 typedef	struct s_list	t_list;
+typedef	struct s_stack	t_stack;
 
-struct		s_list
+struct			s_list
 {
 	char	*str;
 	t_list	*next;
 };
 
-struct		Stack
+struct			s_stack
 {
 	int				top;
 	unsigned int	capacity;
 	int				*array;
 };
 
-struct	Stack	*ft_createStack(unsigned int cap);
+struct s_stack	*ft_create_stack(unsigned int cap);
 
-void			push(struct Stack *stack, int item);
-void			pushall(struct Stack *stack, int *items, int len);
+void			ft_push(struct s_stack *stack, int item);
+void			ft_pushall(struct s_stack *stack, int *items, int len);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putnbr(int n);
@@ -65,6 +66,7 @@ void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memalloc(size_t size);
 void			ft_free2d(void **arr);
 void			ft_sortarr(char *arr);
+void			ft_swap(int *a, int *b);
 
 int				ft_restart_file(int fd, char *file);
 int				ft_list_del_el(char **lisr, char *str);
@@ -86,10 +88,10 @@ int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 int				ft_strchr_indx(const char *s, int c);
 
-int				isEmpty(struct	Stack* stack);
-int				isFull(struct Stack* stack);
-int				lastItem(struct Stack *stack);
-int				pop(struct Stack *stack);
+int				ft_isempty(struct	s_stack *stack);
+int				ft_isfull(struct s_stack *stack);
+int				ft_lastitem(struct s_stack *stack);
+int				ft_pop(struct s_stack *stack);
 
 size_t			ft_strlen(const char *str);
 size_t			ft_strlen_point(char **str);

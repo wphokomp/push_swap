@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 23:29:42 by william           #+#    #+#             */
-/*   Updated: 2018/07/06 23:30:11 by william          ###   ########.fr       */
+/*   Updated: 2018/07/07 10:47:35 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_stdinput(void)
 	char	c;
 	char	*ret;
 	char	*tmp;
-	char 	*tmp2;
+	char	*tmp2;
 
 	ret = ft_strnew(1);
 	while (read(0, &c, 1))

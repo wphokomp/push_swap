@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_pop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 23:48:32 by william           #+#    #+#             */
-/*   Updated: 2018/07/06 23:52:33 by william          ###   ########.fr       */
+/*   Updated: 2018/07/07 10:31:08 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	push(struct Stack *stack, int item)
+void	ft_push(struct s_stack *stack, int item)
 {
-	if (isFull(stack)) return ;
+	if (ft_isfull(stack)) return ;
 	stack->array[++stack->top] = item;
 }
 
-int 	pop(struct Stack *stack)
+int 	ft_pop(struct s_stack *stack)
 {
-	if (isEmpty(stack))
+	if (ft_isempty(stack))
 		return (-2147483648);
 	return (stack->array[stack->top--]);
 }
 
-void    pushall(struct Stack* stack, int *items, int len)
+void    ft_pushall(struct s_stack* stack, int *items, int len)
 {
     int     i;
 
     i = -1;
     while (++i < len)
-        push(stack, items[i]);
+        ft_push(stack, items[i]);
 }

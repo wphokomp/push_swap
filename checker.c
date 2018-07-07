@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 00:22:58 by william          ###   ########.fr       */
+/*   Updated: 2018/07/07 11:07:06 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include "limits.h"
 
-void	ft_matchcommand(char *c, struct Stack* stack_a, struct Stack* stack_b)
+void	ft_matchcommand(char *c, struct s_stack* stack_a, struct s_stack* stack_b)
 {
 	if (ft_strcmp(c, "sa") == 0)
 		swap_a(stack_a);
@@ -77,7 +77,8 @@ int		check_duplicates(char **list)
 	int		o;
 
 	i = -1;
-	if (ft_atol(list[0]) > 2147483647 || (ft_atoi(list[0]) * -1) == (int)-2147483648){
+	if (ft_atol(list[0]) > 2147483647
+			|| (ft_atoi(list[0]) * -1) == (int)-2147483648){
 		return (1);
 	}
 	while (list[++i])
@@ -93,59 +94,44 @@ int		check_duplicates(char **list)
 	return (0);
 }
 
-int		ft_sorted(struct Stack* stack_a, struct Stack* stack_b)
+void	ft_sorted(struct s_stack* stack_a, struct s_stack* stack_b)
 {
 	int		i;
-	int		order;
+	// int		order;
 	int		*stack_a_cpy;
 
-	if (!isEmpty(stack_b))
-		return (0);
+	if (!ft_isempty(stack_b))
+	{
+		ft_matchcommand(ft_stdinput(), stack_a, stack_b);
+	}
 	else
 	{
 		i = -1;
-		stack_a_cpy = (int *)malloc(sizeof(stack_a_cpy) * stack_a->capacity);
-		while (!isEmpty(stack_a))
-			stack_a_cpy[++i] = pop(stack_a);
-		order = -1;
-		while (++order <= i && (order + 1) <= i)
-			if (stack_a_cpy[order] > stack_a_cpy[order + 1])
-				return (0);
+		stack_a_cpy = (int *)malloc(sizeof(int) * stack_a->capacity);
+		/*
+		 * int i, j;
+		 * for (i = 0; i < capacity - 1; i++)
+		 * 	for (j = 0; j < capacity - i - 1; j++)
+		 * 		swap(a, b);*/
 	}
-	pushall(stack_a, stack_a_cpy, i);
-	free(stack_a_cpy);
-    stack_a_cpy = NULL;
-	return (1);
 }
 
 int		main(int ac, char **av)
 {
 	int		arg;
-	struct	Stack	*stack_a;
-	struct	Stack	*stack_b;
+	struct	s_stack	*stack_a;
+	struct	s_stack	*stack_b;
 
 	arg = ac;
-	stack_a = ft_createStack(ac - 1);
-	stack_b = ft_createStack(ac - 1);
+	stack_a = ft_create_stack(ac - 1);
+	stack_b = ft_create_stack(ac - 1);
 	if (ac > 1)
 	{
 		if (ft_checkin(av + 1) == 1 && !check_duplicates(av + 1))
 		{
 			while (--arg >= 0)
-				push(stack_a, ft_atoi(av[arg]));
-			if (ft_sorted(stack_a, stack_b) == 1)
-			{
-				ft_putendl("OK");
-				exit(1);
-			}
-			else
-			{
-				// ft_putnbr(ft_sorted(stack_a, stack_b));
-				while (ft_sorted(stack_a, stack_b) == 0){
-					ft_matchcommand(ft_stdinput(), stack_a, stack_b);
-					ft_putendl("WAT");
-				}
-			}
+				ft_push(stack_a, ft_atoi(av[arg]));
+			ft_sorted(stack_a, stack_b);
 		}
 		else
 		{

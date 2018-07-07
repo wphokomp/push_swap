@@ -6,23 +6,23 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 19:05:11 by william           #+#    #+#             */
-/*   Updated: 2018/07/06 19:22:50 by william          ###   ########.fr       */
+/*   Updated: 2018/07/07 10:46:37 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-signed long  ft_atol(const char *str)
+signed long	ft_atol(const char *str)
 {
-    long  i;
-    long  n;
-    long  nev;
+	long	i;
+	long	n;
+	long	nev;
 
-    i = 0;
-    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
 			|| str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
 		i++;
-    nev = 1;
+	nev = 1;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
