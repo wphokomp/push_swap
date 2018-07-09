@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 21:32:14 by william           #+#    #+#             */
-/*   Updated: 2018/07/07 22:45:56 by william          ###   ########.fr       */
+/*   Created: 2018/07/07 22:47:08 by william           #+#    #+#             */
+/*   Updated: 2018/07/08 00:52:42 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#ifndef	PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include "../libft/libft.h"
+# include "../checker.h"
 
-void    push_a(struct s_stack* stack_a, struct s_stack* stack_b)
-{
-    if (!ft_isempty(stack_b))
-        ft_push(stack_a, ft_pop(stack_b));
-}
+void	run_commands(struct s_stack *stack_a, struct s_stack *stack_b);
+int     is_sorted_asc(struct s_stack *stack);
 
-void    push_b(struct s_stack* stack_a, struct s_stack* stack_b)
-{
-    if (!ft_isempty(stack_a))
-        ft_push(stack_b, ft_pop(stack_a));
-}
+#endif

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 13:01:17 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 10:31:21 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/08 01:32:52 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker.h"
 
 void	swap_a(struct s_stack *stack_a)
 {
 	int		first;
 	int		second;
 
-	if (!ft_isempty(stack_a) && stack_a->capacity > 1)
+	if (!ft_isempty(stack_a))
 	{
 		first = ft_pop(stack_a);
 		second = ft_pop(stack_a);

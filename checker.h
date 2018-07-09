@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 11:22:55 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/07 22:46:40 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "./libft/libft.h"
 

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 11:14:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 12:25:27 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/07 22:45:41 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int		ft_intcmp(int *cpy, int *actual, int len)
 {

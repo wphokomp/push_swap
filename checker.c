@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 12:12:07 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/07 22:45:47 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "push_swap.h"
+#include "checker.h"
 #include "limits.h"
 
 void	ft_matchcommand(char *c, struct s_stack* stack_a, struct s_stack* stack_b)
