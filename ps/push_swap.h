@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 22:47:08 by william           #+#    #+#             */
-/*   Updated: 2018/07/08 00:52:42 by william          ###   ########.fr       */
+/*   Updated: 2018/07/09 14:28:38 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 void	run_commands(struct s_stack *stack_a, struct s_stack *stack_b);
 int     is_sorted_asc(struct s_stack *stack);
+int     is_sorted_desc(struct s_stack *stack);
 
 #endif

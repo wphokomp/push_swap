@@ -5,41 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/04 15:38:36 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/09 16:30:01 by wphokomp         ###   ########.fr        #
+#    Created: 2018/07/09 11:38:55 by wphokomp          #+#    #+#              #
+#    Updated: 2018/07/09 12:08:46 by wphokomp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = checker
+NAME = push_swap
 
-SRC = checker.c swap.c push.c rotate.c check.c
+SRC = push_swap.c run_commands.c ../push.c ../rotate.c ../swap.c
 
-OBJ = $(patsubst %.c,%.o, $(SRC))
+OBJ = ./*.o
 
-LIB = ./libft/
-
-PS = ./ps/
-
-FLAGS = -Wall -Werror -Wextra -Wno-unused-parameter
+LIB = ../libft/
 
 all: $(NAME)
 
 $(NAME):
 	@make -C $(LIB)
-	@make -C $(PS)
-	@gcc -c $(SRC) $(FLAGS)
-	@gcc -g -o $(NAME) $(FLAGS) $(OBJ) libft/libft.a
+	@gcc -c $(SRC)
+	@gcc -g -o $(NAME) $(OBJ) $(LIB)libft.a
 	@rm -fr $(OBJ)
 
 clean:
 	@rm -fr ./.*.swp
-	@rm -fr ./*.o
 	@cd $(LIB) && $(MAKE) clean
-	@cd $(PS) && $(MAKE) clean
 
 fclean: clean
 	@rm -fr $(NAME)
 	@cd $(LIB) && $(MAKE) fclean
-	@cd $(PS) && $(MAKE) fclean
 
 re: fclean all
