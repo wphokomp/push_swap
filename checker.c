@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 22:45:47 by william          ###   ########.fr       */
+/*   Updated: 2018/07/09 21:23:46 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "checker.h"
 #include "limits.h"
 
-void	ft_matchcommand(char *c, struct s_stack* stack_a, struct s_stack* stack_b)
+void ft_matchcommand(char *c, struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	if (ft_strcmp(c, "sa") == 0)
 		swap_a(stack_a);
@@ -45,11 +45,11 @@ void	ft_matchcommand(char *c, struct s_stack* stack_a, struct s_stack* stack_b)
 	}
 }
 
-int		ft_checkin(char **stack)
+int ft_checkin(char **stack)
 {
-	int		i;
-	int		boo;
-	size_t	arg;
+	int i;
+	int boo;
+	size_t arg;
 
 	i = -1;
 	arg = 0;
@@ -57,28 +57,28 @@ int		ft_checkin(char **stack)
 	while (stack[++arg])
 	{
 		i = -1;
-		while(stack[arg][++i])
+		while (stack[arg][++i])
 			if (!ft_isdigit(stack[arg][i]) && stack[arg][0] != '-')
 			{
 				boo = 0;
-				break ;
+				break;
 			}
 		if (!boo)
-			break ;
+			break;
 	}
 	if (arg == ft_strlen_point(stack))
 		return (1);
 	return (0);
 }
 
-int		check_duplicates(char **list)
+int check_duplicates(char **list)
 {
-	int		i;
-	int		o;
+	int i;
+	int o;
 
 	i = -1;
-	if (ft_atol(list[0]) > 2147483647
-			|| (ft_atoi(list[0]) * -1) == (int)-2147483648){
+	if (ft_atol(list[0]) > 2147483647 || (ft_atoi(list[0]) * -1) == (int)-2147483648)
+	{
 		return (1);
 	}
 	while (list[++i])
@@ -94,11 +94,11 @@ int		check_duplicates(char **list)
 	return (0);
 }
 
-void	ft_sorted(struct s_stack* stack_a, struct s_stack* stack_b)
+void ft_sorted(struct s_stack *stack_a, struct s_stack *stack_b)
 {
-	int		i;
+	int i;
 	//int		order;
-	int		*stack_a_cpy;
+	int *stack_a_cpy;
 
 	if (!ft_isempty(stack_b))
 	{
@@ -119,11 +119,11 @@ void	ft_sorted(struct s_stack* stack_a, struct s_stack* stack_b)
 	}
 }
 
-int		main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int		arg;
-	struct	s_stack	*stack_a;
-	struct	s_stack	*stack_b;
+	int arg;
+	struct s_stack *stack_a;
+	struct s_stack *stack_b;
 
 	arg = ac;
 	stack_a = ft_create_stack(ac - 1);
