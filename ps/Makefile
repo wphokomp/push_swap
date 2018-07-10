@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-SRC = push_swap.c sort_stack_a.c sort_stack_b.c ../push.c ../rotate.c ../swap.c
+SRC = push_swap.c sort_stack_a.c ../push.c ../rotate.c ../swap.c
 
 OBJ = ./*.o
 

@@ -17,7 +17,6 @@ void	sort_three(struct s_stack *stack_a)
 	if (stack_a->array[2] > stack_a->array[1]
 		&& stack_a->array[2] > stack_a->array[0])
 	{
-
 		rotate_a(stack_a);
 		ft_putendl("ra");
 	}
@@ -50,6 +49,14 @@ void	sort_multiple(struct s_stack *stack_a, struct s_stack *stack_b)
 	{
 		push_b(stack_a, stack_b);
 		ft_putendl("pb");
+		if (stack_b->top > 1)
+		{
+			if (stack_b->array[stack_b->top] < stack_b->array[stack_b->top - 1])
+			{
+				swap_b(stack_b);
+				ft_putendl("sb");
+			}
+		}
 	}
 	else if (stack_a->array[stack_a->top] > stack_a->array[stack_a->top - 1]
 		&& stack_a->array[stack_a->top] > stack_a->array[0])
@@ -105,19 +112,5 @@ void	run_commands(struct s_stack *stack_a, struct s_stack *stack_b)
 	else
 	{
 		sort_multiple(stack_a, stack_b);
-		if (stack_b->top > 0)
-		{
-			while (!is_sorted_desc(stack_b))
-			{
-				if (stack_b->top == 2)
-				{
-					sort_three_inb(stack_a);
-				}
-				else
-				{
-					sort_multiple_inb(stack_a, stack_b);
-				}
-			}
-		}
 	}
 }

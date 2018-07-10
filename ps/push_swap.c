@@ -52,23 +52,25 @@ int     main(int ac, char **arg)
         i = ft_strlen_point(numbers);
         while (--i >= 0)
             ft_push(stack_a, ft_atoi(numbers[i]));
-        while (!is_sorted_asc(stack_a))
-                run_commands(stack_a, stack_b);
-        while (!ft_isempty(stack_b))
-        {
-            if (!is_sorted_desc(stack_b))
-            {
-                rotate_b(stack_b);
-            }
-            else
-            {
-                while (!ft_isempty(stack_b))
-                {
-                    push_a(stack_a, stack_b);
-                    ft_putendl("pa");
-                }
-            }
+        int n;
+        while (!is_sorted_asc(stack_a)) {
+            run_commands(stack_a, stack_b);
         }
+        // while (!ft_isempty(stack_b))
+        // {
+        //     if (!is_sorted_desc(stack_b))
+        //     {
+        //         rotate_b(stack_b);
+        //     }
+        //     else
+        //     {
+        //         while (!ft_isempty(stack_b))
+        //         {
+        //             push_a(stack_a, stack_b);
+        //             ft_putendl("pa");
+        //         }
+        //     }
+        // }
     }
     return (0);
 }
