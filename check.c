@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 11:14:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 22:45:41 by william          ###   ########.fr       */
+/*   Updated: 2018/07/10 13:43:13 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,4 @@ void	ft_sortint_arr(int *arr, int len)
 			}
 		}
 	}
-	ft_putnbr(counter);
 }

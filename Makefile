@@ -6,15 +6,15 @@
 #    By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/04 15:38:36 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/09 16:30:01 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/10 16:05:15 by wphokomp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
-SRC = checker.c swap.c push.c rotate.c check.c
+SRC = checker.c swap.c push.c rotate.c check.c ps/sort_stack_a.c
 
-OBJ = $(patsubst %.c,%.o, $(SRC))
+OBJ = ./*.o
 
 LIB = ./libft/
 

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_stack_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 22:47:08 by william           #+#    #+#             */
-/*   Updated: 2018/07/10 16:08:49 by wphokomp         ###   ########.fr       */
+/*   Created: 2018/07/10 16:05:35 by wphokomp          #+#    #+#             */
+/*   Updated: 2018/07/10 16:07:44 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "../libft/libft.h"
-# include "../checker.h"
+#include "push_swap.h"
 
-void	run_commands(struct s_stack *stack_a, struct s_stack *stack_b);
+void	sort_three_inb(struct s_stack *stack_b)
+{}
 
-void    sort_three_inb(struct s_stack *stack_b);
-void    sort_multiple_inb(struct s_stack *stack_a, struct s_stack *stack_b);
-
-int     is_sorted_asc(struct s_stack *stack);
-int     is_sorted_desc(struct s_stack *stack);
-
-#endif
+void	sort_multiple_inb(struct s_stack *stack_a, struct s_stack *stack_b)
+{}

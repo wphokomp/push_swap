@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 22:46:40 by william          ###   ########.fr       */
+/*   Updated: 2018/07/10 13:51:58 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CHECKER_H
 
 # include "./libft/libft.h"
+# include "ps/push_swap.h"
 
 void	swap_a(struct s_stack *stack_a);
 void	swap_b(struct s_stack *stack_b);

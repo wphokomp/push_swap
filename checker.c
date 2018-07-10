@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/09 21:23:46 by william          ###   ########.fr       */
+/*   Updated: 2018/07/10 15:16:05 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "checker.h"
-#include "limits.h"
 
 void ft_matchcommand(char *c, struct s_stack *stack_a, struct s_stack *stack_b)
 {
@@ -77,13 +76,13 @@ int check_duplicates(char **list)
 	int o;
 
 	i = -1;
-	if (ft_atol(list[0]) > 2147483647 || (ft_atoi(list[0]) * -1) == (int)-2147483648)
-	{
-		return (1);
-	}
 	while (list[++i])
 	{
 		o = i;
+		if (ft_atol(list[i]) > 2147483647 || (ft_atoi(list[i]) * -1) == (int)-2147483648)
+		{
+			return (1);
+		}
 		while ((size_t)o < ft_strlen_point(list) - 1)
 		{
 			o++;
@@ -97,10 +96,9 @@ int check_duplicates(char **list)
 void ft_sorted(struct s_stack *stack_a, struct s_stack *stack_b)
 {
 	int i;
-	//int		order;
 	int *stack_a_cpy;
 
-	if (!ft_isempty(stack_b))
+	if (!is_sorted_asc(stack_a))
 	{
 		ft_matchcommand(ft_stdinput(), stack_a, stack_b);
 	}
@@ -112,29 +110,30 @@ void ft_sorted(struct s_stack *stack_a, struct s_stack *stack_b)
 			stack_a_cpy[++i] = ft_pop(stack_a);
 		ft_pushall(stack_a, stack_a_cpy, stack_a->capacity);
 		ft_sortint_arr(stack_a_cpy, stack_a->capacity);
-		ft_putnbrendl(ft_intcmp(stack_a_cpy, stack_a->array, (int)stack_a->capacity));
-		//order = -1;
-		//while (++order < (int)stack_a->capacity)
-		//	ft_putnbrendl(stack_a->array[order]);
 	}
 }
 
 int main(int ac, char **av)
 {
 	int arg;
+	char			**args;
 	struct s_stack *stack_a;
 	struct s_stack *stack_b;
 
-	arg = ac;
-	stack_a = ft_create_stack(ac - 1);
-	stack_b = ft_create_stack(ac - 1);
 	if (ac > 1)
 	{
-		if (ft_checkin(av + 1) == 1 && !check_duplicates(av + 1))
+		args = ft_strsplit(av[1], ' ');
+		arg = ft_strlen_point(args);
+		stack_a = ft_create_stack(arg);
+		stack_b = ft_create_stack(arg);
+		if (ft_checkin(args) == 1 && !check_duplicates(args))
 		{
 			while (--arg >= 0)
-				ft_push(stack_a, ft_atoi(av[arg]));
-			ft_sorted(stack_a, stack_b);
+				ft_push(stack_a, ft_atoi(args[arg]));
+			while (!is_sorted_asc(stack_a))
+				ft_matchcommand(ft_stdinput(), stack_a, stack_b);
+			while (!ft_isempty(stack_b))
+				ft_matchcommand(ft_stdinput(), stack_a, stack_b);
 		}
 		else
 		{
