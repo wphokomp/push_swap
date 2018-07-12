@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/31 14:43:24 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/07 11:23:19 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/12 14:34:06 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ char			*ft_itoa(int n);
 char			*ft_strnew(size_t size);
 char			**ft_strnew_point(size_t size);
 char			*ft_strdup(const char *s1);
-char			*ft_stdinput(void);
+char			*ft_stdinput(int *i);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_str_chr(char *s, int c);
 char			*ft_mem_realloc(char *old, size_t size);

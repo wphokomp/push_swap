@@ -6,7 +6,7 @@
 /*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/12 13:37:41 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/12 15:30:46 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		check_duplicates(char **list)
 
 int		main(int ac, char **av)
 {
-	int				arg;
+	int				i;
 	char			**args;
 	struct s_stack	*stack_a;
 	struct s_stack	*stack_b;
@@ -70,14 +70,14 @@ int		main(int ac, char **av)
 	if (ac > 1)
 	{
 		args = ft_strsplit(av[1], ' ');
-		arg = ft_strlen_point(args);
-		stack_a = ft_create_stack(arg);
-		stack_b = ft_create_stack(arg);
+		ac = ft_strlen_point(args);
+		stack_a = ft_create_stack(ac);
+		stack_b = ft_create_stack(ac);
 		if (ft_checkin(args) == 1 && !check_duplicates(args))
 		{
-			while (--arg >= 0)
-				ft_push(stack_a, ft_atoi(args[arg]));
-			ft_matchcommand(ft_stdinput(), stack_a, stack_b);
+			while (--ac >= 0)
+				ft_push(stack_a, ft_atoi(args[ac]));
+			ft_matchcommand(ft_stdinput(&i), stack_a, stack_b, i);
 			ft_sort(stack_a, stack_b);
 		}
 		else
@@ -86,6 +86,5 @@ int		main(int ac, char **av)
 			exit(1);
 		}
 	}
-	 ft_putendl("OK");
 	return (0);
 }

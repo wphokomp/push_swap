@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdinput.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 23:29:42 by william           #+#    #+#             */
-/*   Updated: 2018/07/11 21:02:59 by william          ###   ########.fr       */
+/*   Updated: 2018/07/12 14:34:55 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_stdinput(void)
+char	*ft_stdinput(int *i)
 {
 	char	c;
 	char	*ret;
@@ -21,7 +21,7 @@ char	*ft_stdinput(void)
 	char	*tmp2;
 
 	ret = ft_strnew(1);
-	while (read(0, &c, 1))
+	while ((*i = read(0, &c, 1)))
 	{
 		if (c == '\n')
 			break ;
