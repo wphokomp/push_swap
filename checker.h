@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/11 21:56:15 by william          ###   ########.fr       */
+/*   Updated: 2018/07/12 13:00:56 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,25 @@
 
 void	swap_a(struct s_stack *stack_a);
 void	swap_b(struct s_stack *stack_b);
-void	swap_ab(struct s_stack* stack_a, struct s_stack* stack_b);
+void	swap_ab(struct s_stack *stack_a, struct s_stack *stack_b);
 
-void    rotate_a(struct s_stack* stack_a);
-void    rotate_b(struct s_stack* stack);
-void    rotate_ab(struct s_stack* stack_a, struct s_stack* stack_b);
-void    rev_rotate_a(struct s_stack* stack);
-void    rev_rotate_b(struct s_stack* stack);
-void    rev_rotate_ab(struct s_stack* stack_a, struct s_stack* stack_b);
+void	rotate_a(struct s_stack *stack_a);
+void	rotate_b(struct s_stack *stack);
+void	rotate_ab(struct s_stack *stack_a, struct s_stack *stack_b);
+void	rev_rotate_a(struct s_stack *stack);
+void	rev_rotate_b(struct s_stack *stack);
+void	rev_rotate_ab(struct s_stack *stack_a, struct s_stack *stack_b);
 
-void    push_a(struct s_stack* stack_a, struct s_stack* stack_b);
-void    push_b(struct s_stack* stack_a, struct s_stack* stack_b);
+void	push_a(struct s_stack *stack_a, struct s_stack *stack_b);
+void	push_b(struct s_stack *stack_a, struct s_stack *stack_b);
 
 void	ft_sortint_arr(int *arr, int len);
 
 void	sort_order(struct s_stack *stack, char *command);
 
-int		ft_intcmp(int *cpy, int *actual, int len);
+void	ft_matchcommand(char *c, struct s_stack *stack_a
+			, struct s_stack *stack_b);
+void	ft_sort(struct s_stack *stack_a, struct s_stack *stack_b);
+void	check_b(struct s_stack *stack_a, struct s_stack *stack_b);
 
 #endif

@@ -6,13 +6,13 @@
 #    By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:38:55 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/10 16:04:57 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/12 12:57:40 by wphokomp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = push_swap.c sort_stack_a.c ../push.c ../rotate.c ../swap.c
+SRC = push_swap.c sort_stack_a.c ../push.c ../rotate.c ../swap.c ../check.c
 
 OBJ = ./*.o
 
