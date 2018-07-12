@@ -1,36 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdinput.c                                      :+:      :+:    :+:   */
+/*   try_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 23:29:42 by william           #+#    #+#             */
-/*   Updated: 2018/07/11 21:02:59 by william          ###   ########.fr       */
+/*   Created: 2018/07/11 21:54:54 by william           #+#    #+#             */
+/*   Updated: 2018/07/11 21:56:36 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "checker.h"
 
-char	*ft_stdinput(void)
-{
-	char	c;
-	char	*ret;
-	char	*tmp;
-	char	*tmp2;
-
-	ret = ft_strnew(1);
-	while (read(0, &c, 1))
-	{
-		if (c == '\n')
-			break ;
-		tmp2 = ft_strnew(1);
-		ft_strncpy(tmp2, &c, 1);
-		tmp = ft_strjoin(ret, tmp2);
-		free(tmp2);
-		free(ret);
-		ret = tmp;
-	}
-	return (ret);
-}
+void	sort_order(struct s_stack *stack, char *command)
+{}

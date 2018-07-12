@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:32:53 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/10 13:51:58 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/11 21:56:15 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void    push_a(struct s_stack* stack_a, struct s_stack* stack_b);
 void    push_b(struct s_stack* stack_a, struct s_stack* stack_b);
 
 void	ft_sortint_arr(int *arr, int len);
+
+void	sort_order(struct s_stack *stack, char *command);
 
 int		ft_intcmp(int *cpy, int *actual, int len);
 

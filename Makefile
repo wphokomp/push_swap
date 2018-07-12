@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+         #
+#    By: william <william@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/04 15:38:36 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/10 16:05:15 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/11 21:54:41 by william          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
-SRC = checker.c swap.c push.c rotate.c check.c ps/sort_stack_a.c
+SRC = checker.c swap.c push.c rotate.c check.c ps/sort_stack_a.c try_sort.c
 
 OBJ = ./*.o
 

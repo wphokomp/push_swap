@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/10 15:16:05 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/11 21:47:08 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void ft_matchcommand(char *c, struct s_stack *stack_a, struct s_stack *stack_b)
 		rev_rotate_ab(stack_a, stack_b);
 	else if (ft_strcmp(c, "rr") == 0)
 		rotate_ab(stack_a, stack_b);
+	else if (ft_strcmp(c, "^C"))
+	{
+		ft_putendl("OK");
+		exit(1);
+	}
 	else
 	{
 		ft_putendl("Error");
@@ -92,6 +97,7 @@ int check_duplicates(char **list)
 	}
 	return (0);
 }
+//pb, ra, pb, ra, sa, ra, pa, pa
 
 void ft_sorted(struct s_stack *stack_a, struct s_stack *stack_b)
 {
@@ -115,7 +121,7 @@ void ft_sorted(struct s_stack *stack_a, struct s_stack *stack_b)
 
 int main(int ac, char **av)
 {
-	int arg;
+	int				arg;
 	char			**args;
 	struct s_stack *stack_a;
 	struct s_stack *stack_b;
@@ -130,10 +136,16 @@ int main(int ac, char **av)
 		{
 			while (--arg >= 0)
 				ft_push(stack_a, ft_atoi(args[arg]));
-			while (!is_sorted_asc(stack_a))
+			ft_matchcommand(ft_stdinput(), stack_a, stack_b);
+			arg = is_sorted_asc(stack_a);
+			while (!arg){
 				ft_matchcommand(ft_stdinput(), stack_a, stack_b);
-			while (!ft_isempty(stack_b))
-				ft_matchcommand(ft_stdinput(), stack_a, stack_b);
+				arg = is_sorted_asc(stack_a);
+				if (arg && !ft_isempty(stack_b))
+					arg = 0;
+			}
+			if (arg)
+				ft_putendl("OK");
 		}
 		else
 		{
