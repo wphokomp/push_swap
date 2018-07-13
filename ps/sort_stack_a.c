@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 22:44:48 by william           #+#    #+#             */
-/*   Updated: 2018/07/12 12:55:33 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/13 06:56:43 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,6 @@ void	sort_multiple(struct s_stack *stack_a, struct s_stack *stack_b)
 	{
 		push_b(stack_a, stack_b);
 		ft_putendl("pb");
-		// if (stack_b->top > 1)
-		// {
-		// 	if (stack_b->array[stack_a->top] < stack_b->array[stack_b->top - 1])
-		// 	{
-		// 		if (stack_a->array[stack_a->top] >
-		// 				stack_a->array[stack_a->top - 1]
-		// 			&& stack_a->array[stack_a->top] < stack_a->array[0])
-		// 		{
-		// 			swap_ab(stack_a, stack_b);
-		// 			ft_putendl("ss");
-		// 		}
-		// 		else
-		// 		{
-		// 			swap_b(stack_b);
-		// 			ft_putendl("sb");
-		// 		}
-		// 	}
-		// }
 		check_b(stack_a, stack_b);
 	}
 	else if (stack_a->array[stack_a->top] > stack_a->array[stack_a->top - 1]

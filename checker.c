@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/12 15:30:46 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/12 21:18:58 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ int		check_duplicates(char **list)
 		while ((size_t)o < ft_strlen_point(list) - 1)
 		{
 			o++;
-			if (ft_strcmp(list[i], list[o]) == 0)
+			if (ft_strcmp(list[i], list[o]) == 0){
+				ft_putendl(list[i]);
 				return (1);
+			}
 		}
 	}
 	return (0);

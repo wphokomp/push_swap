@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:36:24 by william           #+#    #+#             */
-/*   Updated: 2018/07/12 13:13:39 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/12 19:56:49 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ int		main(int ac, char **arg)
 		while (!is_sorted_asc(stack_a))
 			run_commands(stack_a, stack_b);
 		push_back(stack_a, stack_b);
-		int i = stack_a->top;
-			while (i >= 0)
-				ft_putnbrendl(stack_a->array[i--]);
 	}
 	return (0);
 }
