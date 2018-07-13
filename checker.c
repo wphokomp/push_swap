@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 10:37:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/13 07:00:30 by william          ###   ########.fr       */
+/*   Updated: 2018/07/13 11:15:47 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int		main(int ac, char **av)
 				ft_push(stack_a, ft_atoi(args[ac]));
 			ft_matchcommand(ft_stdinput(&i), stack_a, stack_b, i);
 			ft_sort(stack_a, stack_b);
+			ft_free2d((void **)args);
 		}
 		else
 		{

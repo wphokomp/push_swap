@@ -6,7 +6,7 @@
 #    By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:38:55 by wphokomp          #+#    #+#              #
-#    Updated: 2018/07/12 12:57:40 by wphokomp         ###   ########.fr        #
+#    Updated: 2018/07/13 11:14:28 by wphokomp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC = push_swap.c sort_stack_a.c ../push.c ../rotate.c ../swap.c ../check.c
 
 OBJ = ./*.o
 
+FLAGS = -Wall -Werror -Wextra
+
 LIB = ../libft/
 
 all: $(NAME)
@@ -23,7 +25,7 @@ all: $(NAME)
 $(NAME):
 	@make -C $(LIB)
 	@gcc -c $(SRC)
-	@gcc -g -o $(NAME) $(OBJ) $(LIB)libft.a
+	@gcc -g -o $(NAME) $(FLAGS) $(OBJ) $(LIB)libft.a
 	@rm -fr $(OBJ)
 
 clean:

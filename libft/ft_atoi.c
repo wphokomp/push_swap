@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/26 10:07:13 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/09 16:41:46 by wphokomp         ###   ########.fr       */
+/*   Created: 2018/07/13 11:02:38 by wphokomp          #+#    #+#             */
+/*   Updated: 2018/07/13 11:02:41 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int		i;
-	size_t	n;
-	int		nev;
+	int i;
+	int n;
+	int nev;
 
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
@@ -30,9 +30,7 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	n = 0;
-	if (ft_strcmp(ft_strtrim(str), "9223372036854775807") == 0)
-		return (-1);
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		n = n * 10;
 		n = n + ((int)str[i] - '0');

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:36:24 by william           #+#    #+#             */
-/*   Updated: 2018/07/13 07:11:29 by william          ###   ########.fr       */
+/*   Updated: 2018/07/13 10:55:59 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	push_back(struct s_stack *stack_a, struct s_stack *stack_b)
 				run_commands(stack_a, stack_b);
 		}
 	}
-	free(stack_a->array);
-	free(stack_b->array);
 }
 
 int		main(int ac, char **arg)
@@ -46,6 +44,11 @@ int		main(int ac, char **arg)
 		while (!is_sorted_asc(stack_a))
 			run_commands(stack_a, stack_b);
 		push_back(stack_a, stack_b);
+		free(stack_a);
+		free(stack_a->array);
+		free(stack_b);
+		free(stack_b->array);
+		ft_free2d((void **)numbers);
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 19:05:11 by william           #+#    #+#             */
-/*   Updated: 2018/07/07 10:46:37 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/13 11:04:03 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ signed long	ft_atol(const char *str)
 		i++;
 	}
 	n = 0;
-	if (ft_strcmp(ft_strtrim(str), "9223372036854775807") == 0)
-		return (-1);
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		n = n * 10;
 		n = n + ((long)str[i] - '0');

@@ -27,7 +27,8 @@ SRC = ft_atoi.c ft_bzero.c ft_bzero_point.c ft_isalnum.c ft_isalpha.c\
 	  ft_strsub.c ft_strdup.c ft_strtrim.c ft_tolower.c ft_toupper.c\
 	  ft_restart_file.c ft_listnew.c ft_stdinput.c ft_strchr_indx.c\
 	  ft_listdup.c op.c ft_chrcmp.c ft_isbrac.c ft_sortarr.c ft_swap.c\
-	  ft_putnbrendl.c ft_atol.c ft_stack_functions.c ft_push_pop.c
+	  ft_putnbrendl.c ft_atol.c ft_stack_functions.c ft_push_pop.c\
+	  ft_free2d.c
 
 CFLAGS = -Wall\
 		 -Werror\

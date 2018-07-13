@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 21:33:59 by william           #+#    #+#             */
-/*   Updated: 2018/07/12 11:46:31 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/13 11:32:00 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	rotate_b(struct s_stack *stack_b)
 	ft_push(stack_b, first);
 	while (i > 0)
 		ft_push(stack_b, stack_b_cpy[--i]);
+	free(stack_b_cpy);
 	stack_b_cpy = NULL;
 }
 

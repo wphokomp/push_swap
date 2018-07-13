@@ -20,7 +20,7 @@ LIB = ./libft/
 
 PS = ./ps/
 
-FLAGS = -Wall -Werror -Wextra -Wno-unused-parameter
+FLAGS = #-Wall -Werror -Wextra -Wno-unused-parameter
 
 all: $(NAME)
 

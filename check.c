@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 11:14:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/13 07:10:35 by william          ###   ########.fr       */
+/*   Updated: 2018/07/13 11:33:41 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ void	error_handle(char *c, struct s_stack *stack_a
 	else
 	{
 		ft_putendl("Error");
-		free(stack_a->array);
-		free(stack_b->array);
+		ft_freestuff(stack_a, stack_b);
 	}
 	exit(1);
 }
@@ -62,51 +61,14 @@ void	rotate_stacks(struct s_stack *stack_a
 		if (stack_a->array[0] < stack_a->array[1])
 		{
 			ft_putendl("KO");
-			free(stack_a->array);
-			free(stack_b->array);
+			ft_freestuff(stack_a, stack_b);
 			exit(1);
 		}
 	}
 	else if (ft_strcmp(c, "rb") == 0)
 		rotate_b(stack_a);
-	else if (ft_strcmp(c, "rra") == 0)
-		rev_rotate_a(stack_a);
-	else if (ft_strcmp(c, "rrb") == 0)
-	{
-		if (stack_b->top > 1)
-			rev_rotate_b(stack_b);
-		else
-		{
-			ft_putendl("KO");
-			free(stack_a->array);
-			free(stack_b->array);
-			exit(1);
-		}
-	}
-	else if (ft_strcmp(c, "rrr") == 0)
-	{
-		if (stack_a->top > 1 && stack_b->top > 1)
-		{
-			rev_rotate_ab(stack_a, stack_b);
-			if (stack_a->array[0] < stack_a->array[1] ||
-				stack_b->array[0] < stack_b->array[1])
-			{
-				ft_putendl("KO");
-				free(stack_a->array);
-				free(stack_b->array);
-				exit(1);
-			}
-		}
-		else
-		{
-			ft_putendl("KO");
-			free(stack_a->array);
-			free(stack_b->array);
-			exit(1);
-		}
-	}
-	else if (ft_strcmp(c, "rr") == 0)
-		rotate_ab(stack_a, stack_b);
+	else if (ft_strncmp(c, "rr", 2) == 0)
+		rotate_stacks_2(c, stack_a, stack_b);
 	else
 		error_handle(c, stack_a, stack_b, i);
 }
@@ -146,7 +108,6 @@ void	ft_sort(struct s_stack *stack_a, struct s_stack *stack_b)
 	if (sorted)
 	{
 		ft_putendl("OK");
-		free(stack_a->array);
-		free(stack_b->array);
+		ft_freestuff(stack_a, stack_b);
 	}
 }
