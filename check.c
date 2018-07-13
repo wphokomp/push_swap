@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 11:14:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/12 16:48:18 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/13 07:10:35 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,11 @@ void	error_handle(char *c, struct s_stack *stack_a
 			ft_putendl("KO");
 	}
 	else
+	{
 		ft_putendl("Error");
+		free(stack_a->array);
+		free(stack_b->array);
+	}
 	exit(1);
 }
 
@@ -58,6 +62,8 @@ void	rotate_stacks(struct s_stack *stack_a
 		if (stack_a->array[0] < stack_a->array[1])
 		{
 			ft_putendl("KO");
+			free(stack_a->array);
+			free(stack_b->array);
 			exit(1);
 		}
 	}
@@ -72,6 +78,8 @@ void	rotate_stacks(struct s_stack *stack_a
 		else
 		{
 			ft_putendl("KO");
+			free(stack_a->array);
+			free(stack_b->array);
 			exit(1);
 		}
 	}
@@ -84,12 +92,16 @@ void	rotate_stacks(struct s_stack *stack_a
 				stack_b->array[0] < stack_b->array[1])
 			{
 				ft_putendl("KO");
+				free(stack_a->array);
+				free(stack_b->array);
 				exit(1);
 			}
 		}
 		else
 		{
 			ft_putendl("KO");
+			free(stack_a->array);
+			free(stack_b->array);
 			exit(1);
 		}
 	}
@@ -132,5 +144,9 @@ void	ft_sort(struct s_stack *stack_a, struct s_stack *stack_b)
 			sorted = 0;
 	}
 	if (sorted)
+	{
 		ft_putendl("OK");
+		free(stack_a->array);
+		free(stack_b->array);
+	}
 }

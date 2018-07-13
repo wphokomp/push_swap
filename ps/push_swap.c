@@ -6,7 +6,7 @@
 /*   By: william <william@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:36:24 by william           #+#    #+#             */
-/*   Updated: 2018/07/12 19:56:49 by william          ###   ########.fr       */
+/*   Updated: 2018/07/13 07:11:29 by william          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	push_back(struct s_stack *stack_a, struct s_stack *stack_b)
 				run_commands(stack_a, stack_b);
 		}
 	}
+	free(stack_a->array);
+	free(stack_b->array);
 }
 
 int		main(int ac, char **arg)
