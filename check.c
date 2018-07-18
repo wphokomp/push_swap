@@ -6,7 +6,7 @@
 /*   By: wphokomp <wphokomp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 11:14:02 by wphokomp          #+#    #+#             */
-/*   Updated: 2018/07/13 11:33:41 by wphokomp         ###   ########.fr       */
+/*   Updated: 2018/07/18 14:29:48 by wphokomp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	rotate_stacks(struct s_stack *stack_a
 	if (ft_strcmp(c, "ra") == 0)
 	{
 		rotate_a(stack_a);
-		if (stack_a->array[0] < stack_a->array[1])
+		if (stack_a->top < 1)
 		{
 			ft_putendl("KO");
 			ft_freestuff(stack_a, stack_b);
@@ -66,7 +66,15 @@ void	rotate_stacks(struct s_stack *stack_a
 		}
 	}
 	else if (ft_strcmp(c, "rb") == 0)
-		rotate_b(stack_a);
+	{
+		rotate_b(stack_b);
+		if (stack_b->top < 1)
+		{
+			ft_putendl("KO");
+			ft_freestuff(stack_a, stack_b);
+			exit(1);
+		}
+	}
 	else if (ft_strncmp(c, "rr", 2) == 0)
 		rotate_stacks_2(c, stack_a, stack_b);
 	else
